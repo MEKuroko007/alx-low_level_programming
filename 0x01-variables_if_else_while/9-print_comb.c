@@ -2,9 +2,7 @@
 #include <stdlib.h>
 /**
  * main - entry - point
- * 
- * prints all possible combinations of single-digit numbers.
- * 
+ * prints all possible combinations of single-digit numbers. 
  * Return: 0
  */
 int main(void)
