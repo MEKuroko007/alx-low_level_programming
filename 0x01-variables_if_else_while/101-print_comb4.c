@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - entry - point 
+ * main - prints all possible different combinations of three digits
  * Return: 0 Always (success)
  */
 int main(void)
