@@ -5,7 +5,7 @@
  * times_table - prints the 9 times table, starting with 0
  * Return: 0 Always successfull
  */
-int main(void)
+void main(void)
 {
 	int i = 0, k;
 
@@ -40,5 +40,4 @@ int main(void)
 		i++;
 		_putchar('\n');
 	}
-	return (0);
 }
