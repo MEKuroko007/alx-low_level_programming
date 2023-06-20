@@ -5,7 +5,7 @@
  * times_table - prints the 9 times table, starting with 0
  * Return: 0 Always successfull
  */
-void main(void)
+void times_table(void)
 {
 	int i = 0, k;
 
