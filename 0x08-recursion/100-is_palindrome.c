@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+#include <string.h>
 /**
  * _palindrom - function that returns
  * 1 if a string is a palindrome and 0 if not
@@ -10,6 +10,8 @@
  */
 int _palindrom(int i, int l, char *str)
 {
+	if (str == NULL)
+		return (1);
 	if (str[i] == str[l])
 		return (1);
 	if (str[i] != str[l])
