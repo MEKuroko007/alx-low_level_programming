@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _recursion - function checks for the square root
+ * _recursion - function checks number sqrt
  * @number:int
  * @sqrt:int
  *
