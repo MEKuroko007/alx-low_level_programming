@@ -12,8 +12,8 @@ int _palindrom(int i, int l, char *str)
 {
 	if (str == NULL)
 		return (1);
-	if (str[i] == str[l])
-		return (1);
+/*	if (str[i] == str[l])
+		return (1);*/
 	if (str[i] != str[l])
 		return (0);
 	if (i >= l)
