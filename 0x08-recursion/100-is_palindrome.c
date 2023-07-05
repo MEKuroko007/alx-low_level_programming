@@ -16,9 +16,9 @@ int _palindrom(int i, int l, char *str)
 		return (1);
 	if (str[i] != str[l])
 		return (0);
-	if (l + 1 > i)
-		return (_palindrom(i++, l--, str));
-	return (1);
+	if (i >= l)
+		return (0);
+	return (_palindrom(i + 1, l - 1, str));
 }
 /**
  * is_palindrome - function check if a string is palindrom or not
