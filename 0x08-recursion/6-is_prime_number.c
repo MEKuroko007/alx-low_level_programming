@@ -15,6 +15,11 @@ int check(int n1, int n2)
 	else
 		return (check(n1 + 1, n2));
 }
+/**
+ * is_prime_number - function that states if number is prime
+ * @n:int
+ * Return:int
+ */
 int is_prime_number(int n)
 {
 	if (n == 2)
