@@ -16,6 +16,6 @@ int factorial(int n)
 	}
 	else
 	{
-		return (1 * factorial(n - 1));
+		return (n * factorial(n - 1));
 	}
 } /* essalhi */
