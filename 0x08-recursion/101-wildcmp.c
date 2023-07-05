@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * str_checker - function that compare two strings
+ * _compare - function that compare two strings
  * @s1:string
  * @s2:string
  * @i:index
