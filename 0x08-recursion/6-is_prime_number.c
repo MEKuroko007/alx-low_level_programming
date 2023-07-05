@@ -1,28 +1,28 @@
 #include "main.h"
 
 /**
- * check - function that checks to see if number is prime
- * @n1:int
- * @n2:int
- * Return:int
+ * is_prime_number_recursive - function that check prime number
+ * @n:int
+ * @i:int
+ * Return: 0 or 1
  */
-int check(int n1, int n2)
+int is_prime_number_recursive(int n, int i)
 {
-	if (n2 < 2 || n2 % n1 == 0)
-		return (0);
-	else if (n1 > n2 / 2)
+	if (i == 1)
 		return (1);
-	else
-		return (check(n1 + 1, n2));
+	if (n < 2)
+		return (0);
+	if (n % i  == 0)
+		return (0);
+	return (is_prime_number_recursive(n, i - 1));
 }
 /**
- * is_prime_number - function that states if number is prime
+ * is_prime_number - function that returns
+ * 1 if the input integer is a prime number, otherwise return 0
  * @n:int
  * Return:int
  */
 int is_prime_number(int n)
 {
-	if (n == 2)
-		return (1);
-	return (check(2, n));
+	return (is_prime_number_recursive(n, n / 2));
 }
