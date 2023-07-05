@@ -30,5 +30,5 @@ int is_palindrome(char *s)
 {
 	int l = strlen(s);
 
-	return (_palindrom(0, l, &s));
+	return (_palindrom(0, l, s));
 } /* essalhi */
