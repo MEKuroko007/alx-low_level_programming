@@ -7,7 +7,7 @@
  *
  * Return: int
  */
-int check(int number, int sqrt)
+int _recursion(int number, int sqrt)
 {
 	if (number * number == sqrt)
 		return (number);
