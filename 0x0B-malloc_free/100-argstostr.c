@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * argstostr -  concatenates all the arguments of your program.
  * @ac:integer
@@ -7,7 +8,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i = 0, size = 0, j, k;
+	int i = 0i, size = 0, j, k;
 	char *arg;
 
 	if (ac == 0 || av == NULL)
