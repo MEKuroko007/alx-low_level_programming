@@ -30,7 +30,7 @@ int op_div(int x, int y)
 {
 	if (y == 0)
 	{
-		printf("error\n");
+		printf("Error\n");
 		exit(100);
 	}
 	return (x / y);
@@ -45,7 +45,7 @@ int op_mod(int x, int y)
 {
 	if (y == 0)
 	{
-		printf("error\n");
+		printf("Error\n");
 		exit(100);
 	}
 	return (x % y);

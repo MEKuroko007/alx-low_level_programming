@@ -11,14 +11,14 @@ int main(int argc, char **av)
 
 	if (argc != 4)
 	{
-		printf("error\n");
+		printf("Error\n");
 		return (98);
 	}
 	alx = get_op_func(av[2]);
 
 	if (!alx)
 	{
-		printf("error\n");
+		printf("Error\n");
 		return (99);
 	}
 	printf("%d\n", alx(atoi(av[1]), atoi(av[3])));
