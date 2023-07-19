@@ -21,6 +21,16 @@ int op_sub(int x, int y)
 	return (x - y);
 }
 /**
+ * op_mul - multiply x and y
+ *@x:int
+ *@y:int
+ *Return:result
+ */
+int op_mul(int x, int y)
+{
+        return (x * y);
+}
+/**
  * op_div - divide x / y
  * @x:int
  * @y:int
@@ -49,14 +59,4 @@ int op_mod(int x, int y)
 		exit(100);
 	}
 	return (x % y);
-}
-/**
- * op_mul - multiply x and y
- *@x:int
- *@y:int
- *Return:result
- */
-int op_mul(int x, int y)
-{
-	return (x * y);
 }
