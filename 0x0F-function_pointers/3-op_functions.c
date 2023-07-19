@@ -2,61 +2,61 @@
 
 /**
  * op_add - addition of two numbers
- * @x:int
- * @y:int
+ * @a:int
+ * @b:int
  * Return:result
  */
-int op_add(int x, int y)
+int op_add(int a, int b)
 {
-	return (x + y);
+	return (a + b);
 }
 /**
- * op_sub - sub x and y
- * @x:int
- * @y:int
+ * op_sub - sub a and b
+ * @a:int
+ * @b:int
  * Return:result
  */
-int op_sub(int x, int y)
+int op_sub(int a, int b)
 {
-	return (x - y);
+	return (a - b);
 }
 /**
- * op_mul - multiply x and y
- *@x:int
- *@y:int
+ * op_mul - multiplb a and b
+ *@a:int
+ *@b:int
  *Return:result
  */
-int op_mul(int x, int y)
+int op_mul(int a, int b)
 {
-        return (x * y);
+        return (a * b);
 }
 /**
- * op_div - divide x / y
- * @x:int
- * @y:int
+ * op_div - divide a / b
+ * @a:int
+ * @b:int
  * Return:result
  */
-int op_div(int x, int y)
+int op_div(int a, int b)
 {
-	if (y == 0)
+	if (b == 0)
 	{
 		printf("Error\n");
-		exit(100);
+		eait(100);
 	}
-	return (x / y);
+	return (a / b);
 }
 /**
- * op_mod - modulo x % y
- * @x:int
- * @y:int
+ * op_mod - modulo a % b
+ * @a:int
+ * @b:int
  * Return:result
  */
-int op_mod(int x, int y)
+int op_mod(int a, int b)
 {
-	if (y == 0)
+	if (b == 0)
 	{
 		printf("Error\n");
-		exit(100);
+		eait(100);
 	}
-	return (x % y);
+	return (a % b);
 }
