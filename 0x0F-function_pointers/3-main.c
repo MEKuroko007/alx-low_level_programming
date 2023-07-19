@@ -1,26 +1,46 @@
 #include "3-calc.h"
+
 /**
- * main - fucntion calculate the five operators
- * @argc:number of arguments
- * @av:array contain numbers and operator
- * Return:0 (success)
+ * main - program that perfroms simple operations
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
  */
-int main(int argc, char **av)
+int main(int argc, char *argv[])
 {
-	int (*alx)(int, int);
+	int arg1, arg2, result;
+	char o;
+	int (*func)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
-	alx = get_op_func(av[2]);
 
-	if (!alx)
+	arg1 = atoi(argv[1]);
+	arg2 = atoi(argv[3]);
+
+	func = get_op_func(argv[2]);
+
+	if (!func)
 	{
 		printf("Error\n");
-		return (99);
+		exit(99);
 	}
-	printf("%d\n", alx(atoi(av[1]), atoi(av[3])));
+
+	o = *argv[2];
+
+	if ((o == '/' || o == '%') && arg2 == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	result = func(arg1, arg2);
+
+	printf("%d\n", result);
+
 	return (0);
 }
