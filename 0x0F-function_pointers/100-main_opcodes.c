@@ -1,12 +1,13 @@
 #include "function_pointers.h"
+
 /**
  * main - prints its own opcodes
  * @argc: number of arguments
- * @av: array of arguments
+ * @argv: array of arguments
  *
  * Return: Always 0 (Success)
  */
-int main(int argc, char **av[])
+int main(int argc, char *argv[])
 {
 	int b, i;
 	char *arr;
@@ -17,7 +18,7 @@ int main(int argc, char **av[])
 		exit(1);
 	}
 
-	b = atoi(av[1]);
+	b = atoi(argv[1]);
 
 	if (b < 0)
 	{
