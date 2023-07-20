@@ -4,7 +4,6 @@
  * print_strings - Print numbers using a separator
  * @separator:separator
  * @n:args
- * @...:strings
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
