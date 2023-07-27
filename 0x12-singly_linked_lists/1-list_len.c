@@ -1,19 +1,19 @@
 #include "lists.h"
-
 /**
  * list_len - Calculate the number of elements.
  * @h: Pointer to a list.
  * Return: Integer.
  **/
-
 size_t list_len(const list_t *h)
 {
+	list_t *count = NULL;
 	unsigned int n = 0;
 
-	while (h)
+	count = h;
+	while (count)
 	{
 		n++;
-		h->next;
+		count = count->next;
 	}
 	return (n);
 }
