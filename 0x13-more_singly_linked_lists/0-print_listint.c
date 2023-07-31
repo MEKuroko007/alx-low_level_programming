@@ -7,7 +7,7 @@
 size_t print_listint(const listint_t *h)
 {
 	const listint *temp;
-	int count = 0;
+	unsigned int count = 0;
 
 	temp = h;
 
