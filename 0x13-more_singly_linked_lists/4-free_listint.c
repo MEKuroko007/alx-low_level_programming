@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdlib.h>
 /**
  * free_listint - Frees a list.
  * @head: Address of the first node of a list.
