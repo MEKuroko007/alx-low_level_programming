@@ -10,7 +10,9 @@
 #include <stdlib.h>
 
 #define ELF_MAGIC_LEN 4
-
+/*
+* Byte - Byte
+*/
 typedef unsigned char Byte;
 /*
  * struct - struct
