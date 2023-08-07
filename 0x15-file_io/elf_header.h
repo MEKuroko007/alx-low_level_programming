@@ -24,7 +24,7 @@ typedef unsigned char Byte;
  */
 typedef struct ElfHeader
 {
-    Byte e_ident[ELF_MAGIC_LEN];
+Byte e_ident[ELF_MAGIC_LEN];
 } ElfHeader;
 
 void check_elf_file(Byte *e_ident);
