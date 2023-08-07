@@ -106,7 +106,7 @@ printf("%#lx\n", e_entry);
 }
 /**
  * close_elf_file - Closes an ELF file.
- * @elf: The file descriptor of the ELF file.
+ * @fd: The file descriptor of the ELF file.
  */
 void close_elf_file(int fd)
 {
