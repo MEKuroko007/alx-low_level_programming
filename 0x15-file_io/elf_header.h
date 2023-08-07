@@ -16,9 +16,9 @@
 typedef unsigned char Byte;
 /*
  * struct ElfHeader - struct
- * @Byte:Byte e_ident
+ * @e_ident:elf identification
  */
-typedef struct 
+typedef struct
 {
 Byte e_ident[ELF_MAGIC_LEN];
 } ElfHeader;
