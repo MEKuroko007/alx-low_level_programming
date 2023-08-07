@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int from_fd, to_fd, read_b, close_source, close_destination;
+	int from_fd, to_fd, read_bytes, close_source, close_destination;
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
@@ -22,16 +22,16 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	to_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while ((read_b = read(from_fd, buffer, BUFSIZ)) > 0)
+	while ((read_bytes = read(from_fd, buffer, BUFFER_SIZE)) > 0)
 	{
-		if (to_fd < 0 || write(to_fd, buffer, read_b) != read_b)
+		if (to_fd < 0 || write(to_fd, buffer, read_bytes) < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(from_fd);
 			exit(99);
 		}
 	}
-	if (read_b < 0)
+	if (read_bytes < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -47,5 +47,4 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	return (0);
-} /*essalhi*/
-
+} /*ESSALHI*/
