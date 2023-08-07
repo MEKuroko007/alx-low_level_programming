@@ -1,5 +1,5 @@
-#ifndef elf_H
-#define elf_H
+#ifndef ELF_H
+#define ELF_H
 
 #include <elf.h>
 #include <sys/types.h>
@@ -16,7 +16,7 @@
 typedef unsigned char Byte;
 
 /**
- * ElfHeader - ELF file header
+ * struct ElfHeader - ELF file header
  * @e_ident: ELF identification
  */
 typedef struct
@@ -35,4 +35,4 @@ void print_elf_type(unsigned int e_type, Byte *e_ident);
 void print_elf_entry(unsigned long int e_entry, Byte *e_ident);
 void close_elf_file(int fd);
 
-#endif /*essalhi 0x7*/
+#endif /* ELF_H */
