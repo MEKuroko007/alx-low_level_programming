@@ -18,10 +18,13 @@ typedef unsigned char Byte;
 /**
  * struct ElfHeader - ELF file header
  * @e_ident: ELF identification
+ *
+ * Description: Represents the ELF file header. This structure contains
+ *              the ELF identification bytes.
  */
 typedef struct
 {
-  Byte e_ident[ELF_MAGIC_LEN];
+    Byte e_ident[ELF_MAGIC_LEN];
 } ElfHeader;
 
 void check_elf_file(Byte *e_ident);
@@ -35,4 +38,4 @@ void print_elf_type(unsigned int e_type, Byte *e_ident);
 void print_elf_entry(unsigned long int e_entry, Byte *e_ident);
 void close_elf_file(int fd);
 
-#endif /* ELF_H */
+#endif /* ESSALHI 0X7 */
