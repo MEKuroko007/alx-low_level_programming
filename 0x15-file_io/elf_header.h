@@ -14,9 +14,10 @@
 * Byte - Byte
 */
 typedef unsigned char Byte;
-/*
- * struct ElfHeader - struct
- * @e_ident:elf identification
+
+/**
+ * struct ElfHeader - ELF file header
+ * @e_ident: ELF identification
  */
 typedef struct
 {
