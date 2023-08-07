@@ -44,7 +44,7 @@ break;
 }
 }
 /**
-* print_elf_abi_versioni - Prints the ABI version of an ELF header.
+* print_elf_abi_version - Prints the ABI version of an ELF header.
 * @e_ident: A pointer to an array containing the ELF ABI version.
 */
 void print_elf_abi_version(Byte *e_ident)
@@ -104,7 +104,10 @@ printf("%#x\n", (unsigned int)e_entry);
 else
 printf("%#lx\n", e_entry);
 }
-
+/**
+ * close_elf_file - Closes an ELF file.
+ * @elf: The file descriptor of the ELF file.
+ */
 void close_elf_file(int fd)
 {
 if (close(fd) == -1)
