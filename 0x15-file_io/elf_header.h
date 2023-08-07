@@ -22,7 +22,7 @@ typedef unsigned char Byte;
  * Description: Represents the ELF file header. This structure contains
  *              the ELF identification bytes.
  */
-typedef struct
+typedef struct ElfHeader
 {
     Byte e_ident[ELF_MAGIC_LEN];
 } ElfHeader;
