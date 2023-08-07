@@ -15,7 +15,7 @@
 */
 typedef unsigned char Byte;
 /*
- * struct - struct
+ * ElfHeader - struct
  * @Byte:Byte e_ident
  */
 typedef struct
