@@ -1,70 +1,58 @@
 #include "main.h"
 
-
-void display_error(const char *message, int code);
-void copy_file(const char *source_file, const char *destination_file);
 /**
- * display_error - print error
- * @message:message
- * @code:code
+ * main - copies the content of a file to another file
+ * @argc: number of arguments passed to the program
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
  */
-void display_error(const char *message, int code) {
-	dprintf(STDERR_FILENO, "Error: %s\n", message);
-	exit(code);
-}
-/**
- * copy_file - function to copy content of source to destination
- * @source_file:argv[1]
- * @destination_file:argv[2]
- */
-void copy_file(const char *source_file, const char *destination_file) {
-	int source_fd, destination_fd;
-	ssize_t bytes_read, bytes_written;
-	char buffer[BUFFER_SIZE];
+int main(int argc, char *argv[])
+{
+	int source_fd, destination_fd, read_bytes, close_source, close_destination;
+	char buffer[BUFSIZ];
 
-	source_fd = open(source_file, O_RDONLY);
-	if (source_fd == -1) {
-		display_error("Can't read from source file", 98);
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
 
-	destination_fd = open(destination_file, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (destination_fd == -1) {
-		close(source_fd);
-		display_error("Can't write to destination file", 99);
+	source_fd = open(argv[1], O_RDONLY);
+	if (source_fd < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 
-	while ((bytes_read = read(source_fd, buffer, BUFFER_SIZE)) > 0) {
-		bytes_written = write(destination_fd, buffer, bytes_read);
-		if (bytes_written == -1) {
+	destination_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((read_bytes = read(source_fd, buffer, BUFSIZ)) > 0)
+	{
+		if (destination_fd < 0 || write(destination_fd, buffer, read_bytes) != read_bytes)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(source_fd);
-			close(destination_fd);
-			display_error("Can't write to destination file", 99);
+			exit(99);
 		}
 	}
 
-	if (bytes_read == -1) {
-		close(source_fd);
-		close(destination_fd);
-		display_error("Can't read from source file", 98);
+	if (read_bytes < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 
-	close(source_fd);
-	close(destination_fd);
-}
-/**
- * main - entry point to handle cp command
- * @argc:number of arguments include cp file
- * @argv:arguments
- * Return:Success
- */
-
-int main(int argc, char *argv[]) {
-	if (argc != 3) {
-		display_error("Usage: cp file_from file_to", 97);
+	close_source = close(source_fd);
+	close_destination = close(destination_fd);
+	if (close_source < 0 || close_destination < 0)
+	{
+		if (close_source < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
+		if (close_destination < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", destination_fd);
+		exit(100);
 	}
 
-	copy_file(argv[1], argv[2]);
-
-	return 0;
+	return (0);
 }
 
