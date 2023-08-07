@@ -18,10 +18,10 @@ typedef unsigned char Byte;
  * ElfHeader - struct
  * @Byte:Byte e_ident
  */
-typedef struct
+struct ElfHeader
 {
 Byte e_ident[ELF_MAGIC_LEN];
-} ElfHeader;
+}
 
 void check_elf_file(Byte *e_ident);
 void print_elf_magic(Byte *e_ident);
