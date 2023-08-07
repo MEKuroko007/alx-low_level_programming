@@ -16,12 +16,12 @@
 typedef unsigned char Byte;
 
 /**
- * struct ElfHeader - ELF file header
+ * ElfHeader - ELF file header
  * @e_ident: ELF identification
  */
 typedef struct
 {
-Byte e_ident[ELF_MAGIC_LEN];
+  Byte e_ident[ELF_MAGIC_LEN];
 } ElfHeader;
 
 void check_elf_file(Byte *e_ident);
