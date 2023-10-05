@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-
 /**
  * key_index - generates the key using hash_djb2
  * @key: pointer the key
